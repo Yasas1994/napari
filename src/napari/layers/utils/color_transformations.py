@@ -37,6 +37,13 @@ def transform_color_with_defaults(
         Nx4 numpy array with a dtype of np.float32
     """
     try:
+        colors_ = []
+        for i in colors:
+            if str(i) != 'nan':
+                colors_.append(i)
+            else:
+                colors_.append('#000000')
+        colors = colors_
         transformed = transform_color(colors)
     except (AttributeError, ValueError, KeyError):
         warnings.warn(
