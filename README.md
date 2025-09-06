@@ -26,6 +26,11 @@ If you want to refer to our documentation, please go to [napari.org](https://www
 
 We're working on [tutorials](https://napari.org/stable/tutorials/), but you can also quickly get started by looking below.
 
+## to install this version of napari 
+```
+pip install "napari[all] @ git+https://github.com/Yasas1994/napari@main"
+```
+
 ## try it out now!
 [Install uv](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to try napari.
 Then launch the program in a terminal window with the command:
