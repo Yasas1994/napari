@@ -5,7 +5,6 @@ a numpy array with N rows, N being the number of data points, and a dtype of np.
 """
 
 import warnings
-from itertools import cycle
 
 import numpy as np
 
@@ -73,7 +72,7 @@ def transform_color_with_defaults(
 
 def transform_color_cycle(
     color_cycle: ColorType, elem_name: str, default: str
-) -> tuple['cycle[np.ndarray]', np.ndarray]:
+) -> np.ndarray:
     """Helper method to return an Nx4 np.array from an arbitrary user input.
 
     Parameters
@@ -87,8 +86,6 @@ def transform_color_cycle(
 
     Returns
     -------
-    transformed_color_cycle : cycle
-        cycle of shape (4,) numpy arrays with a dtype of np.float32
     transformed_colors : np.ndarray
         input array of colors transformed to RGBA
     """
@@ -98,9 +95,7 @@ def transform_color_cycle(
         elem_name=elem_name,
         default=default,
     )
-    transformed_color_cycle = cycle(transformed_colors)
-
-    return transformed_color_cycle, transformed_colors
+    return transformed_colors
 
 
 def normalize_and_broadcast_colors(
